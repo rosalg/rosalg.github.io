@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="All about Gilbert Rosal">
+  <meta name="keywords" content="Gilbert, Rosal, game, design, game design, coding">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gilbert Rosal</title>
+  <link rel="stylesheet" href="gilbert_rosal.css">
+  <script>
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks, videos;
+
+    videos = document.getElementsByTagName("video");
+    for (i = 0; i < videos.length; i++) videos[i].pause();
+
+    tabcontent = document.getElementsByClassName("tab");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("links");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    for (i = 0; i < tablinks.length; i++) {
+        if (tablinks[i].className.includes(tabName)) tablinks[i].className += " active";
+    }
+
+  }
+
+function openInternal(evt, internalName) {
+  // Declare all variables
+  var i, tabcontent, tablinks, videos;
+
+  videos = document.getElementsByTagName("video");
+  for (i = 0; i < videos.length; i++) videos[i].pause();
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("internaltabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("internallink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(internalName).style.display = "block";
+  for (i = 0; i < tablinks.length; i++) {
+        if (tablinks[i].className.includes(internalName)) {
+          tablinks[i].className += " active";
+          if (document.getElementById(internalName+'vid') != null) document.getElementById(internalName+'vid').play();
+        }
+  }
+}
+
+function openBoth(event, tabName, internalName) {
+  openTab(event, tabName);
+  openInternal(event, internalName);
+}
+  </script>
+</head>
+<!--------------------------------------------- HEAD --------------------------------------------------------------- -->
+<body>
+  <header>
+    <a class="links name" onclick="openTab(event, 'about')" id="defaultOpen">Gilbert Rosal</a>
+    <div id="cap">Building Games and Software for Social Good</div>
+  </header>
+  <nav>
+    <ul>
+      <li><a class="links info webDevelopment" onclick="openTab(event, 'webDevelopment')">Web Development</a></li>
+      <li><a class="links info gameDevelopment" onclick="openTab(event, 'gameDevelopment')">Game Development</a></li>
+      <li><a class="links info about" onclick="openTab(event, 'about')" style="display:block;">About</a></li>
+      <li><a class="links info resume" onclick="openTab(event, 'resume')">Resume</a></li>
+    </ul>
+  </nav>
+  <section id="about" class="tab">
+    <p>
+      <img class="mainpic" src="images/Gilbert_Rosal_photo.jpg" alt="A picture of Gilbert Rosal">
+      Hi! My name is Gilbert Rosal and I'm a student at Stanford majoring in Computer Science
+      with a focus in Artificial Intelligence.
+      <br><br>
+      I love designing games and websites with the intention of helping people, whether it be
+      through skills training, providing a fun outlet, or staying connected with those who matter most.
+    </p>
+    <hr>
+    <div style="font-size: 0.75vw; font-family:'Verdana';text-align:center;">Click a selection below to learn more about it.</div>
+    <table>
+      <tr>
+        <td onclick="openBoth(event, 'gameDevelopment', 'blueshot')"><img src="images/blueshot.png" class="preview" alt="Pic"></td>
+        <td onclick="openBoth(event, 'gameDevelopment', 'coin')"><img src="images/coin.png" class="preview" alt="Pic"></td>
+      </tr>
+      <tr>
+        <td onclick="openBoth(event, 'webDevelopment', 'programsheet')" style="background-color:white;"><img src="images/ProgramSheet.png" class="preview" alt="Pic"></td>
+        <td onclick="openBoth(event, 'gameDevelopment', 'supercs107e')"><img src="images/superStanford.jpg" class="preview" alt="Pic"></td>
+      </tr>
+    </table>
+  </section>
+  <section id="webDevelopment" class="tab">
+    <div class="internaltab">
+      <button class="internallink programsheet" onclick="openInternal(event, 'programsheet')">Program Sheet</button>
+      <button class="internallink eve" onclick="openInternal(event, 'eve')">EVE</button>
+      <button class="internallink ecc" onclick="openInternal(event, 'ecc')">ECC</button>
+    </div>
+    <div id="programsheet" class="internaltabcontent">
+      <div class="website">
+        <iframe src="websites/Final.html"></iframe>
+      </div>
+      <div class="desc">
+        This program sheet helps Stanford students planning to enter A.I. plan the classes they will take through their
+        four years at Stanford. The website was drafted on behalf of Stanford as they were looking for a better way
+        for students to develop their 4-year plans.<br>
+        <br>
+        The website uses a drag and drop interface that informs students of any incomplete prerequisites when a class
+        is selected, any classes that follow a planned class, any classes the student gets credit for from AP/IB tests,
+        and any outstanding degree requirements. Users click the selector, select a class, and can then drag that class
+        into the available time based on whether it is offered and whether all prerequisites have been satisfied.
+      </div>
+    </div>
+    <div id="eve" class="internaltabcontent">
+      <div class="website">
+        <iframe src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fc.simmer.io%2Fstatic%2FunityFrame%2Findex.html%3Furl%3Dhttps%253A%252F%252Fsimmercdn.com%252Funity%252FPZHZuMH9F7MUl3JndiQwsXqkYdZ2%252Fcontent%252F0b6ea978-04a2-a0ef-ca82-b8bcc5371b04%26imagePath%3Dscreens%2F0.png&url=https%3A%2F%2Fsimmer.io%2F%40erawn%2Fp2ee-v2&image=https%3A%2F%2Fsimmercdn.com%2Funity%2FPZHZuMH9F7MUl3JndiQwsXqkYdZ2%2Fcontent%2F0b6ea978-04a2-a0ef-ca82-b8bcc5371b04%2Fscreens%2F0.png&key=a19fcc184b9711e1b4764040d3dc5c07&type=text%2Fhtml&schema=simmer">
+        </iframe>
+      </div>
+      <div class="desc">
+        In a group of 3, we designed an explorable explainer to help users clarify the dichotomy between the environment
+        and the economy. More often than not, these two things are seen as opposite ends of a spectrum and with this
+        explainer, we hope to debunk that myth to show that the two can mutually coexist.<br>
+        <br>
+        As users select different policies, they can see the percent change each policy has on different factors. These
+        percent changes are based on research referenced in the larger <a href="https://medium.com/design-for-understanding-cs-247i-fall-2019/climate-and-the-economy-470d5c4278c9">
+        article</a> this explainer was attached to. The user can then click on the effects tab that fades in to learn more.
+      </div>
+    </div>
+    <div id="ecc" class="internaltabcontent">
+      <div class="website">
+        <iframe src="https://erawn6.wixsite.com/enviro-econ"></iframe>
+      </div>
+      <div class="desc">
+        Following the development of EVE, my group and I developed a website titled "The Economics of Climate Change" or
+        ECC for short. This website's goal was to further break the perceived dichotomy between the environment and economy.
+        This website equips users with tools to see research and news to break the myth, followed by opportunities to take action afterwards.<br>
+        <br>
+        The write-up explains the design steps that were taken to create the website including our content strategy and
+        message architecture break downs. It also includes a review of preliminary research that looked at an average
+        user's mental model of our topic to generate intuitive navigation links.<br>
+        <br>
+        The full write-up is accessible
+        <a target="_blank" href="https://medium.com/@erawn/the-economics-of-climate-change-7a186cf1a454">here</a>
+        and the full website is accessible
+        <a target="_blank" href="https://erawn6.wixsite.com/enviro-econ">here</a>.
+      </div>
+    </div>
+  </section>
+  <section id="gameDevelopment" class="tab">
+    <div class="internaltab">
+      <button class="internallink blueshot" onclick="openInternal(event, 'blueshot')">Blueshot</button>
+      <button class="internallink supercs107e" onclick="openInternal(event, 'supercs107e')">Super CS107E</button>
+      <button class="internallink coin" onclick="openInternal(event, 'coin')">Coin</button>
+    </div>
+    <div id="blueshot" class="internaltabcontent">
+      <div class="internalvid">
+        <video id="blueshotvid" loop controls>
+          <source src="videos/blueshot.mp4" type="video/mp4">
+          Your browser does not support mp4s.
+        </video>
+        <hr>
+        <div class="internaltxt">
+          Blueshot is a 2-player cooperative game where players can connect over the internet to battle incoming waves
+          of enemies. Each player can either see the color of an enemy (red, green, blue) or cannot see the color. If
+          the player cannot see the color, then that enemy is trying to kill them. That player must kill the enemy
+          before it reaches them by shooting it with the correct color. The teammate is the player who can see the
+          enemies color. Using a ping, the teammate must then communicate to the player being chased what color the
+          enemy is. <br>
+          <br>
+          This game was the final project for the class "Neuroplasticity and Musical Gaming". The game's goal is to
+          train users in two important skills: empathizing and low-level object formation. Firstly, by forcing users to experience
+          running and communicating, we hope to generate a better ability to empathize with struggle. Secondly, by creating
+          an association between sound and object, we hope to improve the response of brain cells that attach meaning to sound.<br>
+          <br>
+          The game was made using Unity in a group of 4, with version control handled through Unity. I was in charge of
+          managing enemies, audio (both production and scripting), and bug-fixing networking issues.
+
+        </div>
+      </div>
+    </div>
+    <div id="supercs107e" class="internaltabcontent">
+      <div class="internalvid">
+        <video id="supercs107evid" loop controls muted>
+          <source src="videos/supercs107e.mp4" type="video/mp4">
+          Your browser does not support mp4s.
+        </video>
+        <hr>
+        <div class="internaltxt">
+          Super CS107E is a 2-player fighting game that draws heavy inspiration from Nintendo's Super Smash Brothers.
+          In this game, each player selects a character then must fight the other until they deplete their opponent's
+          health bar. <br>
+          <br>
+          It was made in a group of two in a Unix command line with version control managed through Github.
+          The game was made from scratch on a Raspberry Pi using a self-made graphics library in C. The game uses
+          Gamecube Remotes as the players' controllers with scripts made in C and assembly. <br>
+          <br>
+          The code for the game is available <a href="https://github.com/rosalg/projects/tree/master/SuperSmashCS107E">here</a>.
+        </div>
+      </div>
+    </div>
+    <div id="coin" class="internaltabcontent">
+      <div class="internalvid">
+        <video id="coinvid" loop controls muted>
+          <source src="videos/coin.mp4" type="video/mp4">
+          Your browser does not support mp4s.
+        </video>
+      </div>
+      <hr>
+      <div class="internaltxt">
+        Coin: A Tale of Two Sides is a self-made single-player puzzle game available on the
+        <a id="appstorelink" href="https://apps.apple.com/us/app/coin-a-tale-of-two-sides/id1506452163">iOS app store</a> for free.
+        Users are confronted with the challenge of bringing both characters to the exit <span style="font-weight:bold;">at the same time</span>.
+        The difficulty lies in the character movement and stage layout: whenever one character moves, the other must move as well, forcing users
+        to think about how the actions of one can affect the other's ability to reach the exit. Users move the characters by dragging
+        the joystick on the left to move left and right and the button on the right to jump. <br>
+        <br>
+        The game was made using Unity and all music, sound effects, and artwork were made by myself. Unity was self taught. <br>
+        <br>
+        I also made this game with the intention of it being a serious game that makes commentary through subtext and
+        a user's puzzle solving process. This is because the user must consider both character's perspectives to reach
+        some common goal. Through this subtle communication, I aim to improve users' empathy and ability to communicate
+        with people of differing perspectives.<br>
+        <br>
+        The code for the game is available <a href="https://github.com/rosalg/projects/tree/master/Coin/Assets/Scripts">here</a>.
+      </div>
+    </div>
+  </section>
+  <section id="resume" class="tab">
+    <div style="text-align:center;">
+      <img src="images/resume.png" alt="Resume" width="50%" border="1px solid black">
+    </div>
+  </section>
+  <script>
+    document.getElementById("defaultOpen").click();
+  </script>
+</body>
+<!--------------------------------------------- BODY --------------------------------------------------------------- -->
+
+</html>
