@@ -1,0 +1,217 @@
+body {
+    margin: 1vw 2.5vw;
+    padding: 1vw;
+    background-color: #C0CAAD;
+}
+
+/* ----------------- HEADER SECTION ------------------------*/
+
+header {
+    font-family: "Verdana";
+}
+
+#cap {
+    font-size: 0.5vw;
+}
+
+.name {
+    font-size: 3.0vw;
+    font-weight: bold;
+}
+
+/* ----------------- NAV SECTION --------------------------*/
+
+nav {
+    margin: 1vw 0 1vw 0;
+}
+
+ul {
+    font-family: "Verdana";
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.links:visited, .links:link {
+    color: #000000;
+    text-decoration: none;
+}
+
+.links:hover {
+    color: #000000;
+    background-color: #9DA9A0;
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+.links:active {
+    opacity: 0;
+}
+
+.info {
+    font-size: 1vw;
+    padding: 0vw 6vw;
+    font-weight: bold;
+}
+
+.active {
+    background-color: #9DA9A0;
+    border: 1px solid black;
+}
+
+/* ----------------- ABOUT SECTION --------------------------*/
+
+.mainpic {
+    width: 20vw;
+    height: 25vw;
+    float: left;
+    margin-right: 2.25vw;
+    margin-bottom: 1vw;
+    border-radius: 50vw;
+    border: 0.1vw solid black;
+}
+
+section {
+    margin: 0 14vw;
+}
+
+.tab {
+    display: none;
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.tab p {
+    font-family: "Verdana";
+    font-size: 2vw;
+    text-align: justify;
+}
+
+table {
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    font-family: "Verdana";
+}
+
+td {
+    width: 50%;
+}
+
+td:hover {
+    animation: fadeEffectTwo 0.5s;
+    opacity: 0.5;
+}
+
+.preview {
+    display: block;
+    width: 100%;
+}
+
+@keyframes fadeEffectTwo {
+    from {opacity: 1;}
+    to {opacity: 0.5;}
+}
+
+/* ----------------- GAME/WEB DEV SECTION --------------------------*/
+.internaltab {
+  overflow: hidden;
+  margin-top: 2vw;
+  border: 1px solid black;
+  background-color: #C0CAAD;
+}
+
+.internaltab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1vw 1vw;
+  transition: 0.3s;
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.internaltab button:hover {
+  animation: grow 0.25s;
+  font-size: 1.55vw;
+}
+
+@keyframes grow {
+    from{font-size:1.5vw;}
+    to{font-size:1.55vw;}
+}
+
+.internaltab button.active {
+  background-color: #9DA9A0;
+}
+
+.internaltabcontent {
+    display: none;
+    border: 1px solid black;
+}
+
+.internaltabcontent .internalvid {
+    padding: 1vw 0;
+    text-align: center;
+}
+
+.internaltabcontent .internaltxt {
+    text-align: justify;
+    font-size: 1vw;
+    font-family: "Verdana";
+    padding: 1vw;
+}
+
+video {
+    width: 50%;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#appstorelink:hover {
+    background-color: #9DA9A0;
+}
+
+.website {
+    float: left;
+    width: 80%;
+    height: 800px;
+}
+
+.desc {
+    float: left;
+    width: 20%;
+    height: 800px;
+    font-family: "Verdana";
+    font-size: 0.75vw;
+    padding: 1vw 2vw;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: black;
+}
+
+.website iframe, .website img{
+    height: 800px;
+    width: 100%;
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+    border-color: black;
+}
+
+.website img:hover {
+    opacity: 0.5;
+}
